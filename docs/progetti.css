@@ -1,0 +1,369 @@
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --text-color: #f5f6fa;
+    --accent-color: #00cec9;
+    --dark-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+    --transition: all 0.3s ease;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: cursive;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--dark-bg);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+
+header {
+    padding: 1.8rem 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    margin-right: 3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 80px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1920/1080');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    animation: float 15s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(108, 92, 231, 0.15) 0%, rgba(10, 10, 10, 0.7) 70%);
+    z-index: 0;
+}
+
+.hero-content {
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-style: italic;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin: 2rem auto;
+    max-width: 700px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+}
+
+.year-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.year-btn {
+    padding: 1rem 2.2rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+.year-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    transition: var(--transition);
+    z-index: -1;
+    border-radius: 50px;
+}
+
+.year-btn:hover::before {
+    width: 100%;
+}
+
+.year-btn:hover {
+    box-shadow: 0 12px 25px rgba(108, 92, 231, 0.5);
+    transform: translateY(-5px);
+}
+
+
+footer {
+    padding: 3rem 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 1rem;
+}
+
+
+.decoration {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.12;
+    z-index: 0;
+}
+
+.decoration-1 {
+    width: 500px;
+    height: 500px;
+    background-color: var(--primary-color);
+    top: 30%;
+    left: -200px;
+}
+
+.decoration-2 {
+    width: 400px;
+    height: 400px;
+    background-color: var(--accent-color);
+    bottom: 20%;
+    right: -150px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    body{
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .year-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1.5rem;
+    }
+    
+    .logo {
+        margin-right: 1.5rem;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    body{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .year-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-right: 0;
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .year-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .decoration-1 {
+        width: 300px;
+        height: 300px;
+        top: 40%;
+        left: -100px;
+    }
+
+    .decoration-2 {
+        width: 250px;
+        height: 250px;
+        bottom: 15%;
+        right: -100px;
+    }
+}

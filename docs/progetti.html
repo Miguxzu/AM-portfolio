@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="progetti.css">
+    <link rel="icon" type="image/png" href="img\pascal-Photoroom.png">
+    <title>Portfolio di Alessandro Miguel Magnani</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   
+</head>
+<body>
+    
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+
+    
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">AM PORTFOLIO</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+   
+    <section class="hero">
+        <div class="particles">
+           
+           <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const particlesContainer = document.querySelector('.particles');
+                    
+                    for (let i = 0; i < 50; i++) {
+                        const size = Math.random() * 5 + 1;
+                        const particle = document.createElement('div');
+                        particle.classList.add('particle');
+                        
+                        particle.style.width = `${size}px`;
+                        particle.style.height = `${size}px`;
+                        particle.style.left = `${Math.random() * 100}%`;
+                        particle.style.top = `${Math.random() * 100}%`;
+                        particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+                        particle.style.animationDelay = `${Math.random() * 5}s`;
+                        
+                        particlesContainer.appendChild(particle);
+                    }
+                });
+            </script> 
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1>Alessandro Miguel Magnani</h1>
+                <p class="hero-description">
+                    Qui si trovano i progetti del PCTO realizzati negl corso del trienno 2024/2027, per ora sono visibili solo i progetti del primo anno, ma a breve verranno aggiunti anche quelli del secondo e terzo anno. 
+                </p>
+                
+                <div class="year-buttons">
+                    <a href="2024-2025.html" class="year-btn">2024-2025</a>
+                    <a href="wip.html" class="year-btn">2025-2026</a>
+                    <a href="wip.html" class="year-btn">2026-2027</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="container">
+            <p class="footer-text">&copy; 2025 Alessandro Miguel Magnani - Portfolio Scolastico IIS Blaise Pascal</p>
+        </div>
+    </footer>
+</body>
+</html>
