@@ -8,6 +8,7 @@
     --transition: all 0.3s ease;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -35,6 +36,42 @@ a {
     position: relative;
     z-index: 1;
 }
+
+
+    .console-header {
+        display: flex;
+        align-items: center;
+        gap: 8px; /* Add spacing between dots */
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .console-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+
+    .dot-red {
+        background-color: red;
+    }
+
+    .dot-yellow {
+        background-color: yellow;
+    }
+
+    .dot-green {
+        background-color: green;
+    }
+
+    .console-title {
+        margin-left: auto; /* Push title to the right */
+        font-size: 14px;
+        font-weight: bold;
+    }
+
 
 header {
     padding: 1.8rem 0;
